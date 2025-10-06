@@ -1,0 +1,27 @@
+#pragma once
+#include <vector>
+#include <raylib.h>
+
+class Grid
+{
+private:
+	int totalRows;
+	int totalColumns;
+	int cellSize;
+	std::vector<Color> tetroColors;
+
+	// Getting the colors for each of the shapes (tetrominos)
+	std::vector<Color> GetCellColors();
+
+public:
+	int gameGrid[20][10];	// Declaring a 2D int array with 20 rows and 20 columns; TODO: Make dynamic
+
+	// Constructor (CTOR)
+	Grid();	
+	// Create the grid for the first time and set all elements to be 0 (denoting empty)
+	void InitializeGameGrid();
+	// Testing method; TODO: Make it utility fn.by accepting different types of argument
+	void Print();
+	// Drawing the grid on the window canvas
+	void DrawGrid();
+};

@@ -1,0 +1,3 @@
+E:\Projects\Visual Studio\tetris-raylib\tetris-raylib-vs\x64\Debug\raylib.dll
+E:\Projects\Visual Studio\tetris-raylib\tetris-raylib-vs\x64\Debug\glfw3.dll
+E:\Projects\Visual Studio\tetris-raylib\tetris-raylib-vs\tetris-raylib-vs\x64\Debug\tetris-r.885E2D5F.Up2Date
