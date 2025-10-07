@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include "grid.hpp"
+#include "tetrominos.cpp"
 
 int main()
 {
@@ -12,6 +13,9 @@ int main()
 
 	// Creating the main grid for the game
 	Grid currentGridObject = Grid();
+	// Creating a tetromino object
+	TBlock currentLBlock = TBlock();
+	// Utility function to check for values
 	currentGridObject.Print();
 
 	// Standard game loop
@@ -30,6 +34,9 @@ int main()
 
 		// TODO: Multithread this - draw grid on a separate thread and join back to main
 		currentGridObject.DrawGrid();
+
+		// Draw the current tetromino on the screen
+		currentLBlock.DrawTetromino();
 
 		// End the drawing of the canvas
 		EndDrawing();

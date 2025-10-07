@@ -1,5 +1,6 @@
 #include "grid.hpp"
 #include <iostream>
+#include "colors.hpp"
 
 Grid::Grid()
 {
@@ -34,21 +35,6 @@ void Grid::Print()
 		}
 		std::cout << std::endl;
 	}
-}
-
-std::vector<Color> Grid::GetCellColors()
-{
-	Color darkGray = { 26,31,40,255 };		// Empty cell
-	Color red = { 232,18,18,255 };
-	Color blue = { 13,64,216,255 };
-	Color yellow = { 237, 234, 4, 255 };
-	Color green = { 47,230,23,255 };
-	Color orange = { 226,116,17,255 };
-	Color purple = { 166, 0, 247, 255 };
-	Color cyan = { 21, 204, 209, 255 };
-
-	// Order of colors matters here, as it will be referenced later via indices (corresponding to block ID)
-	return { darkGray, red, blue,yellow,green,orange,purple,cyan };
 }
 
 void Grid::DrawGrid()

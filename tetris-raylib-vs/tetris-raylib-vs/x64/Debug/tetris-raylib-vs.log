@@ -1,4 +1,6 @@
 ﻿  main.cpp
+  tetrominos.cpp
+  Generating Code...
   tetris-raylib-vs.vcxproj -> E:\Projects\Visual Studio\tetris-raylib\tetris-raylib-vs\x64\Debug\tetris-raylib-vs.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

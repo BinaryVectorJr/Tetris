@@ -10,9 +10,6 @@ private:
 	int cellSize;
 	std::vector<Color> tetroColors;
 
-	// Getting the colors for each of the shapes (tetrominos)
-	std::vector<Color> GetCellColors();
-
 public:
 	int gameGrid[20][10];	// Declaring a 2D int array with 20 rows and 20 columns; TODO: Make dynamic
 

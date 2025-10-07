@@ -123,11 +123,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\colors.cpp" />
     <ClCompile Include="src\grid.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\position.cpp" />
+    <ClCompile Include="src\tetromino-base.cpp" />
+    <ClCompile Include="src\tetrominos.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\colors.hpp" />
     <ClInclude Include="src\grid.hpp" />
+    <ClInclude Include="src\position.hpp" />
+    <ClInclude Include="src\tetromino-base.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
