@@ -13,6 +13,10 @@ public:
 		tetrominoBaseCells[1] = { Position(0,1), Position(1,1), Position(2,1), Position(2,2) };
 		tetrominoBaseCells[2] = { Position(1,0), Position(1,1), Position(1,2), Position(2,0) };
 		tetrominoBaseCells[3] = { Position(0,0), Position(0,1), Position(1,1), Position(2,1) };
+
+		// Move the tetromino spawn position to the middle of the screen
+		// TODO: Make it dynamic
+		TR_MoveTetromino(0, 3);
 	}
 };
 
@@ -29,6 +33,10 @@ public:
 		tetrominoBaseCells[1] = { Position(0,1), Position(0,2), Position(1,1), Position(2,1) };
 		tetrominoBaseCells[2] = { Position(1,0), Position(1,1), Position(1,2), Position(2,2) };
 		tetrominoBaseCells[3] = { Position(0,1), Position(1,1), Position(2,0), Position(2,1) };
+		
+		// Move the tetromino spawn position to the middle of the screen
+		// TODO: Make it dynamic
+		TR_MoveTetromino(0, 3);
 	}
 };
 
@@ -44,6 +52,11 @@ public:
 		tetrominoBaseCells[1] = { Position(0,2), Position(1,2), Position(2,2), Position(3,2) };
 		tetrominoBaseCells[2] = { Position(2,0), Position(2,1), Position(2,2), Position(2,3) };
 		tetrominoBaseCells[3] = { Position(0,1), Position(1,1), Position(2,1), Position(3,1) };
+
+		// Move the tetromino spawn position to the middle of the screen
+		// TODO: Make it dynamic
+		// Need to change X offset to -1 since the I block is all on one line and hence a blank row is left on top if not done
+		TR_MoveTetromino(-1, 3);
 	}
 };
 
@@ -60,6 +73,11 @@ public:
 		//tetrominoBaseCells[1] = { Position(0,0), Position(0,1), Position(1,0), Position(1,1) };
 		//tetrominoBaseCells[2] = { Position(0,0), Position(0,1), Position(1,0), Position(1,1) };
 		//tetrominoBaseCells[3] = { Position(0,0), Position(0,1), Position(1,0), Position(1,1) };
+
+		// Move the tetromino spawn position to the middle of the screen
+		// TODO: Make it dynamic
+		// Need Y offset as 4 since first two columns are always filled, thus the third column makes it look uneven
+		TR_MoveTetromino(0, 4);
 	}
 };
 
@@ -75,6 +93,10 @@ public:
 		tetrominoBaseCells[1] = { Position(0,1), Position(1,1), Position(1,2), Position(2,2) };
 		tetrominoBaseCells[2] = { Position(1,1), Position(1,2), Position(2,0), Position(2,1) };
 		tetrominoBaseCells[3] = { Position(0,0), Position(1,0), Position(1,1), Position(2,1) };
+
+		// Move the tetromino spawn position to the middle of the screen
+		// TODO: Make it dynamic
+		TR_MoveTetromino(0, 3);
 	}
 };
 
@@ -90,6 +112,10 @@ public:
 		tetrominoBaseCells[1] = { Position(0,1), Position(1,1), Position(1,2), Position(2,1) };
 		tetrominoBaseCells[2] = { Position(1,0), Position(1,1), Position(1,2), Position(2,1) };
 		tetrominoBaseCells[3] = { Position(0,1), Position(1,0), Position(1,1), Position(2,1) };
+
+		// Move the tetromino spawn position to the middle of the screen
+		// TODO: Make it dynamic
+		TR_MoveTetromino(0, 3);
 	}
 };
 
@@ -105,5 +131,9 @@ public:
 		tetrominoBaseCells[1] = { Position(0,2), Position(1,1), Position(1,2), Position(2,1) };
 		tetrominoBaseCells[2] = { Position(1,0), Position(1,1), Position(2,1), Position(2,2) };
 		tetrominoBaseCells[3] = { Position(0,1), Position(1,0), Position(1,1), Position(2,0) };
+
+		// Move the tetromino spawn position to the middle of the screen
+		// TODO: Make it dynamic
+		TR_MoveTetromino(0, 3);
 	}
 };

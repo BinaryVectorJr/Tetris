@@ -16,9 +16,11 @@ public:
 	// Constructor (CTOR)
 	Grid();	
 	// Create the grid for the first time and set all elements to be 0 (denoting empty)
-	void InitializeGameGrid();
+	void GR_InitializeGameGrid();
 	// Testing method; TODO: Make it utility fn.by accepting different types of argument
-	void Print();
+	void GR_Print();
 	// Drawing the grid on the window canvas
-	void DrawGrid();
+	void GR_DrawGrid();
+	// Checking if a given cell position is outside the grid
+	bool GR_IsCellOutsideGrid(int _row, int _col);
 };

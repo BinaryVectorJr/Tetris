@@ -11,10 +11,10 @@ Grid::Grid()
 	cellSize = 30;
 	tetroColors = GetCellColors();
 
-	InitializeGameGrid();
+	GR_InitializeGameGrid();
 }
 
-void Grid::InitializeGameGrid()
+void Grid::GR_InitializeGameGrid()
 {
 	for (int currRow = 0; currRow < totalRows; currRow++)
 	{
@@ -25,7 +25,7 @@ void Grid::InitializeGameGrid()
 	}
 }
 
-void Grid::Print()
+void Grid::GR_Print()
 {
 	for (int currRow = 0; currRow < totalRows; currRow++)
 	{
@@ -37,7 +37,7 @@ void Grid::Print()
 	}
 }
 
-void Grid::DrawGrid()
+void Grid::GR_DrawGrid()
 {
 	for (int currRow = 0; currRow < totalRows; currRow++)
 	{
@@ -52,4 +52,14 @@ void Grid::DrawGrid()
 			DrawRectangle(currCol * cellSize+1, currRow * cellSize+1, cellSize-1, cellSize-1, tetroColors[cellValue]);
 		}
 	}
+}
+
+bool Grid::GR_IsCellOutsideGrid(int _row, int _col)
+{
+	// Boundary checking based on grid total rows and columns
+	if (_row >= 0 && _row < totalRows && _col >= 0 && _col < totalColumns)
+	{
+		return false;
+	}
+	return true;
 }

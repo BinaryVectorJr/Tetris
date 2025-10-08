@@ -5,30 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\tetrominos.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|solutionrelative:src\\tetrominos.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\colors.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|solutionrelative:src\\colors.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\tetromino-base.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|solutionrelative:src\\tetromino-base.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\tetromino-base.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|solutionrelative:src\\tetromino-base.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\grid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|solutionrelative:src\\grid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\grid.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{90DCA5CF-CA5B-4E41-9050-C6D0099ADACB}|tetris-raylib-vs.vcxproj|solutionrelative:src\\grid.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,88 +24,10 @@
               "RelativeDocumentMoniker": "src\\main.cpp",
               "ToolTip": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBAAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-05T23:02:42.598Z",
               "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "colors.cpp",
-              "DocumentMoniker": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\colors.cpp",
-              "RelativeDocumentMoniker": "src\\colors.cpp",
-              "ToolTip": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\colors.cpp",
-              "RelativeToolTip": "src\\colors.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-07T03:16:26.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "tetrominos.cpp",
-              "DocumentMoniker": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\tetrominos.cpp",
-              "RelativeDocumentMoniker": "src\\tetrominos.cpp",
-              "ToolTip": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\tetrominos.cpp",
-              "RelativeToolTip": "src\\tetrominos.cpp",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-07T03:01:16.87Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "tetromino-base.cpp",
-              "DocumentMoniker": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\tetromino-base.cpp",
-              "RelativeDocumentMoniker": "src\\tetromino-base.cpp",
-              "ToolTip": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\tetromino-base.cpp",
-              "RelativeToolTip": "src\\tetromino-base.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-07T02:57:05.457Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "tetromino-base.hpp",
-              "DocumentMoniker": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\tetromino-base.hpp",
-              "RelativeDocumentMoniker": "src\\tetromino-base.hpp",
-              "ToolTip": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\tetromino-base.hpp",
-              "RelativeToolTip": "src\\tetromino-base.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-07T02:39:18.302Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "grid.hpp",
-              "DocumentMoniker": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\grid.hpp",
-              "RelativeDocumentMoniker": "src\\grid.hpp",
-              "ToolTip": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\grid.hpp",
-              "RelativeToolTip": "src\\grid.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-05T23:23:34.871Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "grid.cpp",
-              "DocumentMoniker": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\grid.cpp",
-              "RelativeDocumentMoniker": "src\\grid.cpp",
-              "ToolTip": "E:\\Projects\\Visual Studio\\tetris-raylib\\tetris-raylib-vs\\src\\grid.cpp",
-              "RelativeToolTip": "src\\grid.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-05T23:26:54.439Z",
               "EditorCaption": ""
             }
           ]

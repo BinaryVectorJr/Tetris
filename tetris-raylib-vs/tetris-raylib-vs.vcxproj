@@ -126,6 +126,7 @@
     <ClCompile Include="src\colors.cpp" />
     <ClCompile Include="src\grid.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\maingame.cpp" />
     <ClCompile Include="src\position.cpp" />
     <ClCompile Include="src\tetromino-base.cpp" />
     <ClCompile Include="src\tetrominos.cpp" />
@@ -133,6 +134,7 @@
   <ItemGroup>
     <ClInclude Include="src\colors.hpp" />
     <ClInclude Include="src\grid.hpp" />
+    <ClInclude Include="src\maingame.hpp" />
     <ClInclude Include="src\position.hpp" />
     <ClInclude Include="src\tetromino-base.hpp" />
   </ItemGroup>

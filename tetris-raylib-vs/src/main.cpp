@@ -1,6 +1,5 @@
 #include <raylib.h>
-#include "grid.hpp"
-#include "tetrominos.cpp"
+#include "maingame.hpp"
 
 int main()
 {
@@ -11,12 +10,8 @@ int main()
 	// Without setting this number, performance differs from PC to PC as rendering of the game will depend on how fast the CPU can run
 	SetTargetFPS(60);
 
-	// Creating the main grid for the game
-	Grid currentGridObject = Grid();
-	// Creating a tetromino object
-	TBlock currentLBlock = TBlock();
-	// Utility function to check for values
-	currentGridObject.Print();
+	// Creating the main game object for the session
+	MainGame mainGame = MainGame();
 
 	// Standard game loop
 	// 1. Event Handling
@@ -26,21 +21,20 @@ int main()
 	// Checking if ESC key is pressed or the 'X' icon is pressed
 	while (WindowShouldClose() == false)
 	{
+		// Setting up controls to move tetromino
+		mainGame.MG_HandleInput();
+
 		// Creating a blank canvas to draw gameobjects on
 		BeginDrawing();
 
 		// Setting the background color by clearing the previous frame's graphics
 		ClearBackground(backgroundColor);
 
-		// TODO: Multithread this - draw grid on a separate thread and join back to main
-		currentGridObject.DrawGrid();
-
-		// Draw the current tetromino on the screen
-		currentLBlock.DrawTetromino();
+		// TODO: Multithread this - start a new game/simulation main object and let thats constructor call current game's grid and tetromino
+		mainGame.MG_DrawGame();
 
 		// End the drawing of the canvas
 		EndDrawing();
-
 	}
 
 	// Closing the window after the task is over
