@@ -15,6 +15,10 @@ private:
 	bool MG_IsTetrominoOutside();
 	// Tetromino rotation - encapsulating into a single method to facilitate reusability
 	void MG_RotateTetromino();
+	// Lock the tetromino once it reaches the end of the screen, bottom most row
+	void MG_LockTetromino();
+	// Check every cell of the tetromino to see if it is over an empty cell or not
+	bool MG_TetrominoFitsInCell();
 
 public: 
 	// Creating the main grid for the game session

@@ -1,6 +1,22 @@
 #include <raylib.h>
 #include "maingame.hpp"
 
+// Keep track of time when last update of game occurred - GLOBAL variable
+double lastUpdateTime = 0;
+// Checkk for the passage of an interval
+bool EventTriggered(double interval)
+{
+	// Get the time since the program started in seconds
+	double currentTime = GetTime();
+	if (currentTime - lastUpdateTime >= interval)
+	{
+		// Interval has passed
+		lastUpdateTime = currentTime;
+		return true;
+	}
+	return false;
+}
+
 int main()
 {
 	Color backgroundColor = { 44,44,127,255 }; // Dark blue color as a struct of {R,G,B,A}
@@ -23,6 +39,13 @@ int main()
 	{
 		// Setting up controls to move tetromino
 		mainGame.MG_HandleInput();
+
+		// Calling an event every set interval - here its 0.2 seconds
+		if (EventTriggered(0.2))
+		{
+			// Move the block down by one row every interval
+			mainGame.MG_MoveTetrominoDown();
+		}
 
 		// Creating a blank canvas to draw gameobjects on
 		BeginDrawing();

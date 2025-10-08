@@ -63,3 +63,12 @@ bool Grid::GR_IsCellOutsideGrid(int _row, int _col)
 	}
 	return true;
 }
+
+bool Grid::GR_IsCellEmpty(int _row, int _col)
+{
+	if (gameGrid[_row][_col] == 0)
+	{
+		return true;
+	}
+	return false;
+}

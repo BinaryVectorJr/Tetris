@@ -23,4 +23,6 @@ public:
 	void GR_DrawGrid();
 	// Checking if a given cell position is outside the grid
 	bool GR_IsCellOutsideGrid(int _row, int _col);
+	// Checking if a cell is empty in the grid (for collision purposes)
+	bool GR_IsCellEmpty(int _row, int _col);
 };
