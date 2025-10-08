@@ -9,6 +9,13 @@ private:
 	int totalColumns;
 	int cellSize;
 	std::vector<Color> tetroColors;
+	
+	// Method to check if the row is complete
+	bool GR_IsRowComplete(int _row);
+	// Clear the row, if it is determined as a complete row
+	void GR_ClearRow(int _row);
+	// Once the completed row is cleared, move the rows above down by the amount of rows cleared
+	void GR_MoveRowsDown(int _rowToMoveDown, int _numRowsToBeMovedDownBy);
 
 public:
 	int gameGrid[20][10];	// Declaring a 2D int array with 20 rows and 20 columns; TODO: Make dynamic
@@ -25,4 +32,6 @@ public:
 	bool GR_IsCellOutsideGrid(int _row, int _col);
 	// Checking if a cell is empty in the grid (for collision purposes)
 	bool GR_IsCellEmpty(int _row, int _col);
+	// Combining checking completed rows, removing completed rows, moving down rows above completed rows intp one function
+	int GR_ClearCompletedRows();
 };

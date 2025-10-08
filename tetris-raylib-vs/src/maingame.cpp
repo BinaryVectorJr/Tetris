@@ -150,6 +150,9 @@ void MainGame::MG_LockTetromino()
 	currentTetromino = nextTetromino;
 	// Generate a new next in line
 	nextTetromino = MG_GetRandomTetromino();
+
+	// TODO: Multithread this on its own thread
+	mainGameGrid.GR_ClearCompletedRows();
 }
 
 bool MainGame::MG_TetrominoFitsInCell()
