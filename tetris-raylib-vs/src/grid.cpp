@@ -48,8 +48,8 @@ void Grid::GR_DrawGrid()
 
 			// Drawing a rectange (actually a square) with the default empty color (cellValue = 0 initially)
 			// Cellsize - 1 removes a pixel, to make the total square size slightly smaller than the actual cell size
-			// Cellsize + 1 adds a 1 pixel offset to the render, to make the squares more legible - needed because of the 29x29 rectangle being made which starts at (1,1)
-			DrawRectangle(currCol * cellSize+1, currRow * cellSize+1, cellSize-1, cellSize-1, tetroColors[cellValue]);
+			// Cellsize + 11 adds an 11 pixel offset (10 for border and 1 for canvas start; calculated statically based on grid position on canvas) to the render, to make the squares more legible - needed because of the 29x29 rectangle being made which starts at (1,1)
+			DrawRectangle(currCol * cellSize+11, currRow * cellSize+11, cellSize-1, cellSize-1, tetroColors[cellValue]);
 		}
 	}
 }

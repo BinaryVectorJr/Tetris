@@ -18,7 +18,8 @@ void TetrominoBase::TR_DrawTetromino()
 	for (Position item : tetrominoTiles)
 	{
 		// Create rectangle for each cell in the vector
-		DrawRectangle(item.baseCol * tetrominoBaseCellSize + 1, item.baseRow * tetrominoBaseCellSize + 1, tetrominoBaseCellSize - 1, tetrominoBaseCellSize - 1, tetrominoColors[tetrominoID]);
+		// Cellsize + 11 adds an 11 pixel offset (10 for border and 1 for canvas start; calculated statically based on grid position on canvas) to the render, to make the squares more legible - needed because of the 29x29 rectangle being made which starts at (1,1)
+		DrawRectangle(item.baseCol * tetrominoBaseCellSize + 11, item.baseRow * tetrominoBaseCellSize + 11, tetrominoBaseCellSize - 1, tetrominoBaseCellSize - 1, tetrominoColors[tetrominoID]);
 	}
 }
 

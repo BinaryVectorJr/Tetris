@@ -1,6 +1,6 @@
 ﻿  main.cpp
-  maingame.cpp
-  Generating Code...
+E:\Projects\Visual Studio\tetris-raylib\tetris-raylib-vs\src\main.cpp(64,46): warning C4305: 'argument': truncation from 'double' to 'float'
+E:\Projects\Visual Studio\tetris-raylib\tetris-raylib-vs\src\main.cpp(68,48): warning C4305: 'argument': truncation from 'double' to 'float'
   tetris-raylib-vs.vcxproj -> E:\Projects\Visual Studio\tetris-raylib\tetris-raylib-vs\x64\Debug\tetris-raylib-vs.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
