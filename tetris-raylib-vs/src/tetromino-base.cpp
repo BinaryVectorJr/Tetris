@@ -9,7 +9,7 @@ TetrominoBase::TetrominoBase()
 	columnOffset = 0;
 }
 
-void TetrominoBase::TR_DrawTetromino()
+void TetrominoBase::TR_DrawTetromino(int _offsetX, int _offsetY)
 {
 	// Retrieves the vector of positions for the current rotation state of tetromino
 	std::vector<Position> tetrominoTiles = TR_GetTetrominoCellPositions();
@@ -18,8 +18,8 @@ void TetrominoBase::TR_DrawTetromino()
 	for (Position item : tetrominoTiles)
 	{
 		// Create rectangle for each cell in the vector
-		// Cellsize + 11 adds an 11 pixel offset (10 for border and 1 for canvas start; calculated statically based on grid position on canvas) to the render, to make the squares more legible - needed because of the 29x29 rectangle being made which starts at (1,1)
-		DrawRectangle(item.baseCol * tetrominoBaseCellSize + 11, item.baseRow * tetrominoBaseCellSize + 11, tetrominoBaseCellSize - 1, tetrominoBaseCellSize - 1, tetrominoColors[tetrominoID]);
+		// OLD method had Cellsize + 11 (offset) adds an 11 pixel offset (10 for border and 1 for canvas start; calculated statically based on grid position on canvas) to the render, to make the squares more legible - needed because of the 29x29 rectangle being made which starts at (1,1)
+		DrawRectangle(item.baseCol * tetrominoBaseCellSize + _offsetX, item.baseRow * tetrominoBaseCellSize + _offsetY, tetrominoBaseCellSize - 1, tetrominoBaseCellSize - 1, tetrominoColors[tetrominoID]);
 	}
 }
 

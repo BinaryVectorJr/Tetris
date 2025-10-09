@@ -8,6 +8,7 @@ MainGame::MainGame()
 	currentTetromino = MG_GetRandomTetromino();
 	nextTetromino = MG_GetRandomTetromino();
 	isGameOver = false;
+	gameScore = 0;
 }
 
 std::vector<TetrominoBase> MainGame::MG_GetAllTetrominos()
@@ -37,7 +38,30 @@ TetrominoBase MainGame::MG_GetRandomTetromino()
 void MainGame::MG_DrawGame()
 {
 	mainGameGrid.GR_DrawGrid();
-	currentTetromino.TR_DrawTetromino();
+	// Hard coded offset based on screen and canvas position
+	// TODO: Make it dynamic
+	currentTetromino.TR_DrawTetromino(11,11);
+	switch (nextTetromino.tetrominoID)
+	{
+		case 3:
+			// O Block
+			// Draw the next block to show it to the player
+			// TODO: Make it dynamic
+			nextTetromino.TR_DrawTetromino(255, 295);
+		break;
+		case 5:
+			//I Block
+			// Draw the next block to show it to the player
+			// TODO: Make it dynamic
+			nextTetromino.TR_DrawTetromino(255, 305);
+		break;
+		default:
+			// Draw the next block to show it to the player
+			// TODO: Make it dynamic
+			nextTetromino.TR_DrawTetromino(270, 285);
+		break;
+	}
+
 
 }
 
@@ -66,6 +90,8 @@ void MainGame::MG_HandleInput()
 
 		case KEY_DOWN:
 			MG_MoveTetrominoDown();
+			// Update score by 1 every time down is pressed
+			MG_UpdateScore(0, 1);
 		break;
 
 		case KEY_UP:
@@ -183,7 +209,10 @@ void MainGame::MG_LockTetromino()
 	nextTetromino = MG_GetRandomTetromino();
 
 	// TODO: Multithread this on its own thread
-	mainGameGrid.GR_ClearCompletedRows();
+	int numRowsCleared = mainGameGrid.GR_ClearCompletedRows();
+
+	// Call Score Update
+	MG_UpdateScore(numRowsCleared, 0);
 }
 
 bool MainGame::MG_TetrominoFitsInCell()
@@ -212,4 +241,29 @@ void MainGame::MG_ResetGame()
 	// Select a new random current block and new random next block from the newly populated list
 	currentTetromino = MG_GetRandomTetromino();
 	nextTetromino = MG_GetRandomTetromino();
+
+	// Reset the score to 0
+	gameScore = 0;
+}
+
+void MainGame::MG_UpdateScore(int _linesCleared, int _moveDownPoints)
+{
+	// Different points allotted to number of lines cleared
+	switch (_linesCleared)
+	{
+	case 1:
+		gameScore += 100;
+		break;
+	case 2:
+		gameScore += 300;
+		break;
+	case 3:
+		gameScore += 500;
+		break;
+	default:
+		break;
+	}
+
+	// Add one point each time the player moves the tetromino down
+	gameScore += _moveDownPoints;
 }

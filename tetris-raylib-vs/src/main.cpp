@@ -1,6 +1,7 @@
 #include <raylib.h>
 #include "maingame.hpp"
 #include "colors.hpp"
+#include <iostream>
 
 // Keep track of time when last update of game occurred - GLOBAL variable
 double lastUpdateTime = 0;
@@ -61,7 +62,20 @@ int main()
 		// Drawing the UI - Score title
 		DrawTextEx(mainFont, "Score", { 365, 15 }, 38, 2, WHITE);
 		// Drawing the UI - Rounded rectangle to use as background for the score number
+		// x = 320, y = 65, width = 170, height = 60
 		DrawRectangleRounded({ 320, 65, 170, 60 }, 0.3, 6, lightBlue);
+
+		// Character array to store text and display it
+		char scoreText[10];
+		sprintf_s(scoreText, "%d", mainGame.gameScore);
+		// Measure the text in terms of width and height (x,y) in pixels
+		Vector2 scoreTextSize = MeasureTextEx(mainFont, scoreText, 38, 2);
+		// Using the width, we calculate the position of the score text to be centered in the rectangle (dimensions we are using are (x,width) = (320, 170))
+		// Drawing the UI - actual score number
+		// The calculation is take width of rectangle, then width of text, and subtract. Then the leftover divide into two equal halves and put one half on left of text and other on right of text to keep it centered
+		DrawTextEx(mainFont, scoreText, { 320 + (170 - scoreTextSize.x)/2, 70}, 38, 2, WHITE);
+
+
 		// Drawing the UI - Next tetromino title
 		DrawTextEx(mainFont, "Next", { 370, 185 }, 38, 2, WHITE);
 		// Drawing the UI - Next tetromino display

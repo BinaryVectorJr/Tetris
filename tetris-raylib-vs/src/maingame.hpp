@@ -21,6 +21,8 @@ private:
 	bool MG_TetrominoFitsInCell();
 	// Reset the game to restart it
 	void MG_ResetGame();
+	// Method to calculate score
+	void MG_UpdateScore(int _linesCleared, int _moveDownPoints);
 
 public: 
 	// Creating the main grid for the game session
@@ -43,5 +45,8 @@ public:
 	TetrominoBase MG_GetRandomTetromino();
 	// Return a vector of all tetrominos
 	std::vector<TetrominoBase> MG_GetAllTetrominos();
+
+	// Hold the score of the game
+	int gameScore;
 
 };

@@ -21,8 +21,8 @@ public:
 
 	// CTOR
 	TetrominoBase();
-	// Drawing the tetromino shape inside of the 4x4 base grid
-	void TR_DrawTetromino();
+	// Drawing the tetromino shape inside of the 4x4 base grid; offsets present so we can draw to specific pixels
+	void TR_DrawTetromino(int _offsetX, int _offsetY);
 	// Moving the block
 	void TR_MoveTetromino(int _rowOffset, int _colOffset);
 	// Return the position of the cells after applying offset
