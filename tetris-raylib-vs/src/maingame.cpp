@@ -9,6 +9,23 @@ MainGame::MainGame()
 	nextTetromino = MG_GetRandomTetromino();
 	isGameOver = false;
 	gameScore = 0;
+	// Initialize audo device to play sounds in a game
+	InitAudioDevice();
+	//// Loading in the music
+	//bgMusic = LoadMusicStream("sounds/music.mp3");
+	//// To play the background music
+	//PlayMusicStream(bgMusic);
+	//// Getting the sound clips for audio playback
+	//rotateSound = LoadSound("sounds/rotate.mp3");
+	//clearSound = LoadSound("sounds/clear.mp3);
+}
+
+MainGame::~MainGame()
+{
+	UnloadSound(rotateSound);
+	UnloadSound(clearSound);
+	UnloadMusicStream(bgMusic);
+	CloseAudioDevice();
 }
 
 std::vector<TetrominoBase> MainGame::MG_GetAllTetrominos()
@@ -184,6 +201,11 @@ void MainGame::MG_RotateTetromino()
 		{
 			currentTetromino.TR_UndoRotateTetromino();
 		}
+		else
+		{
+			// Rotation valid, so we need to add sound
+			PlaySound(rotateSound);
+		}
 	}
 }
 
@@ -210,9 +232,12 @@ void MainGame::MG_LockTetromino()
 
 	// TODO: Multithread this on its own thread
 	int numRowsCleared = mainGameGrid.GR_ClearCompletedRows();
-
-	// Call Score Update
-	MG_UpdateScore(numRowsCleared, 0);
+	if (numRowsCleared > 0)
+	{
+		PlaySound(clearSound);
+		// Call Score Update
+		MG_UpdateScore(numRowsCleared, 0);
+	}
 }
 
 bool MainGame::MG_TetrominoFitsInCell()

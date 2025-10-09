@@ -41,6 +41,9 @@ int main()
 	// Checking if ESC key is pressed or the 'X' icon is pressed
 	while (WindowShouldClose() == false)
 	{
+		// Adding and updating music source
+		UpdateMusicStream(mainGame.bgMusic);
+
 		// Setting up controls to move tetromino
 		mainGame.MG_HandleInput();
 
