@@ -19,10 +19,14 @@ private:
 	void MG_LockTetromino();
 	// Check every cell of the tetromino to see if it is over an empty cell or not
 	bool MG_TetrominoFitsInCell();
+	// Reset the game to restart it
+	void MG_ResetGame();
 
 public: 
 	// Creating the main grid for the game session
 	Grid mainGameGrid;
+	// To check if game is over or still running
+	bool isGameOver;
 
 	MainGame();
 	// Drawing the gameobjects via the current game session object

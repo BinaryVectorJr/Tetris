@@ -7,6 +7,7 @@ MainGame::MainGame()
 	currentUsableTetrominosList = MG_GetAllTetrominos();
 	currentTetromino = MG_GetRandomTetromino();
 	nextTetromino = MG_GetRandomTetromino();
+	isGameOver = false;
 }
 
 std::vector<TetrominoBase> MainGame::MG_GetAllTetrominos()
@@ -45,6 +46,13 @@ void MainGame::MG_HandleInput()
 	// Store value of current key pressed
 	int keyPressed = GetKeyPressed();
 
+	// Press R to restart if game is over
+	if (isGameOver && keyPressed == KEY_R)
+	{
+		isGameOver = false;
+		MG_ResetGame();
+	}
+
 	// Switch the behavior based on the key pressed
 	switch (keyPressed)
 	{
@@ -68,44 +76,56 @@ void MainGame::MG_HandleInput()
 
 void MainGame::MG_MoveTetrominoLeft()
 {
-	// Move one column left
-	currentTetromino.TR_MoveTetromino(0, -1);
-
-	// Checking after moving if all the tiles of the tetromino base are inside the game window or grid
-	// Fitness check to ensure collision happens if we move from left side
-	if (MG_IsTetrominoOutside() || MG_TetrominoFitsInCell() == false)
+	// Check if game is over first
+	if (!isGameOver)
 	{
-		// If block moves outside the game window, we move it back in
-		currentTetromino.TR_MoveTetromino(0, 1);
+		// Move one column left
+		currentTetromino.TR_MoveTetromino(0, -1);
+
+		// Checking after moving if all the tiles of the tetromino base are inside the game window or grid
+		// Fitness check to ensure collision happens if we move from left side
+		if (MG_IsTetrominoOutside() || MG_TetrominoFitsInCell() == false)
+		{
+			// If block moves outside the game window, we move it back in
+			currentTetromino.TR_MoveTetromino(0, 1);
+		}
 	}
 }
 
 void MainGame::MG_MoveTetrominoRight()
 {
-	// Move one column right
-	currentTetromino.TR_MoveTetromino(0, 1);
-
-	// Checking after moving if all the tiles of the tetromino base are inside the game window or grid
-	// Fitness check to ensure collision ahppens if we move from right side
-	if (MG_IsTetrominoOutside() || MG_TetrominoFitsInCell() == false)
+	// Check if game is over first
+	if (!isGameOver)
 	{
-		// If block moves outside the game window, we move it back in
-		currentTetromino.TR_MoveTetromino(0, -1);
+		// Move one column right
+		currentTetromino.TR_MoveTetromino(0, 1);
+
+		// Checking after moving if all the tiles of the tetromino base are inside the game window or grid
+		// Fitness check to ensure collision ahppens if we move from right side
+		if (MG_IsTetrominoOutside() || MG_TetrominoFitsInCell() == false)
+		{
+			// If block moves outside the game window, we move it back in
+			currentTetromino.TR_MoveTetromino(0, -1);
+		}
 	}
 }
 
 void MainGame::MG_MoveTetrominoDown()
 {
-	// Move one row down
-	currentTetromino.TR_MoveTetromino(1, 0);
-
-	// Checking after moving if all the tiles of the tetromino base are inside the game window or grid
-	// Also checking if there is empty space for the tetromino to fit - if tetromino encounters a cell that is already occupied, means that there is a tetromino (or a part of it) there, and we can undo the move and lock in place
-	if (MG_IsTetrominoOutside() || MG_TetrominoFitsInCell() == false)
+	// Check if game is over first
+	if (!isGameOver)
 	{
-		// If block moves outside the game window, we move it back in
-		currentTetromino.TR_MoveTetromino(-1, 0);
-		MG_LockTetromino();
+		// Move one row down
+		currentTetromino.TR_MoveTetromino(1, 0);
+
+		// Checking after moving if all the tiles of the tetromino base are inside the game window or grid
+		// Also checking if there is empty space for the tetromino to fit - if tetromino encounters a cell that is already occupied, means that there is a tetromino (or a part of it) there, and we can undo the move and lock in place
+		if (MG_IsTetrominoOutside() || MG_TetrominoFitsInCell() == false)
+		{
+			// If block moves outside the game window, we move it back in
+			currentTetromino.TR_MoveTetromino(-1, 0);
+			MG_LockTetromino();
+		}
 	}
 }
 
@@ -127,13 +147,17 @@ bool MainGame::MG_IsTetrominoOutside()
 
 void MainGame::MG_RotateTetromino()
 {
-	currentTetromino.TR_RotateTetromino();
-
-	// Check if tetromino is outside the game screen or grid bounds
-	// Fitness check to ensure that collision happens when rotating
-	if (MG_IsTetrominoOutside() || MG_TetrominoFitsInCell() == false)
+	// Check if game is over first
+	if (!isGameOver)
 	{
-		currentTetromino.TR_UndoRotateTetromino();
+		currentTetromino.TR_RotateTetromino();
+
+		// Check if tetromino is outside the game screen or grid bounds
+		// Fitness check to ensure that collision happens when rotating
+		if (MG_IsTetrominoOutside() || MG_TetrominoFitsInCell() == false)
+		{
+			currentTetromino.TR_UndoRotateTetromino();
+		}
 	}
 }
 
@@ -148,6 +172,13 @@ void MainGame::MG_LockTetromino()
 	}
 	// Setting the next in line as current
 	currentTetromino = nextTetromino;
+
+	// Checking if newly created tetromino fits; if not GAME OVER
+	if (MG_TetrominoFitsInCell() == false)
+	{
+		isGameOver = true;
+	}
+
 	// Generate a new next in line
 	nextTetromino = MG_GetRandomTetromino();
 
@@ -168,4 +199,17 @@ bool MainGame::MG_TetrominoFitsInCell()
 		}
 	}
 	return true; // The tetromino can move into that space 
+}
+
+void MainGame::MG_ResetGame()
+{
+	// Clear the grid (set all cells to 0)
+	mainGameGrid.GR_InitializeGameGrid();
+
+	//  Get the list of all tetrominos again
+	currentUsableTetrominosList = MG_GetAllTetrominos();
+
+	// Select a new random current block and new random next block from the newly populated list
+	currentTetromino = MG_GetRandomTetromino();
+	nextTetromino = MG_GetRandomTetromino();
 }
